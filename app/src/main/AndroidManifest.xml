@@ -12,8 +12,10 @@
         <activity android:name=".ChoixJeuActivity">
 
         </activity>
-        <activity android:name=".JusFruitActivity">
+        <activity android:name=".JusFruitActivity"></activity>
+
         <activity android:name=".pmu.PmuActivity"></activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
     </application>
 
 </manifest>
