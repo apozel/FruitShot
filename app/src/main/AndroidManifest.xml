@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".pmu.PmuActivity"></activity>
         <activity android:name=".PurpleActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
