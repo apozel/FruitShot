@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "533273008421",
+    "firebase_url": "https://fruitshot-88cca.firebaseio.com",
+    "project_id": "fruitshot-88cca",
+    "storage_bucket": "fruitshot-88cca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533273008421:android:263eecb29ff868c063e2cc",
+        "android_client_info": {
+          "package_name": "fr.isen.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533273008421-4dm6lc8a9uv393cok65elns6v3dl7g8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp221yHc1ftTPvGPeXba4kIP2jmAmnca0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533273008421-4dm6lc8a9uv393cok65elns6v3dl7g8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
