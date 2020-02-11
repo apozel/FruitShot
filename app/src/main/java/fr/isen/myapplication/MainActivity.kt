@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.core.view.children
 import kotlinx.android.synthetic.main.activity_main.*
+import fr.isen.myapplication.pmu.PmuActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
