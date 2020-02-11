@@ -2,6 +2,7 @@ package fr.isen.myapplication.pmu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import fr.isen.myapplication.R
 
 class PmuActivity : AppCompatActivity() {
 
