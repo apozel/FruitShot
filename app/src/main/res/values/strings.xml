@@ -6,4 +6,8 @@
     <string name="appliTitle">Fruit sh..ts</string>
     <string name="titleUsers">Ramène ta fraise</string>
     <string name="timer">8</string>
+    <string name="ActionButton">ACTION</string>
+    <string name="VeriteButton">VÉRITÉ</string>
+
+    <string name="AVuserName">  </string>
 </resources>
