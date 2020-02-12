@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FruitShot</string>
+    <string name="ActionButton">ACTION</string>
+    <string name="VeriteButton">VÉRITÉ</string>
+
+    <string name="AVuserName">  </string>
 </resources>
