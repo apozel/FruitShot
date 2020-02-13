@@ -3,6 +3,7 @@ package fr.isen.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_jus_fruit.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.roundToInt
@@ -22,6 +23,10 @@ class JusFruitActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 //TODO afficher les boutons OK/NOK et afficher une autre question
+                okButton.isVisible = true
+                nokButton.isVisible = true
+                timerView.isVisible = false
+                questionTextView.isVisible = false
             }
         }
         timer.start()

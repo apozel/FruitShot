@@ -9,8 +9,9 @@
 
     <TextView
         android:id="@+id/questionTextView"
-        android:layout_width="312dp"
+        android:layout_width="294dp"
         android:layout_height="125dp"
+        android:fontFamily="@font/poiret_one"
         android:text="@string/question1"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -25,7 +26,7 @@
         android:id="@+id/timerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/actor"
         android:text="@string/timer"
         android:textAlignment="center"
         android:textColor="#A997C4"
@@ -43,9 +44,11 @@
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/actor"
         android:text="@string/userName"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,25 +57,26 @@
 
     <ImageView
         android:id="@+id/okButton"
-        android:layout_width="81dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="180dp"
-        android:src="@android:drawable/checkbox_on_background"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="248dp"
         android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/nokButton"
-        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionTextView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/okbutton" />
 
     <ImageView
         android:id="@+id/nokButton"
-        android:layout_width="69dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="164dp"
-        android:src="@android:drawable/ic_delete"
-        android:visibility="visible"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="248dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.674"
+        app:layout_constraintHorizontal_bias="0.811"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/timerView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nokbutton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
