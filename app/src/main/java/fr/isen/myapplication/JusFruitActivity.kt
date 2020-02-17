@@ -30,13 +30,5 @@ class JusFruitActivity : AppCompatActivity() {
             }
         }
         timer.start()
-
-
-
     }
-
-
-
-
-
 }
