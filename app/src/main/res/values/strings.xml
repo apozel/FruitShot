@@ -10,4 +10,5 @@
     <string name="VeriteButton">VÉRITÉ</string>
 
     <string name="AVuserName">  </string>
+    <string name="questionDisplay" />
 </resources>
