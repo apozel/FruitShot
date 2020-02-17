@@ -57,7 +57,6 @@ class JusFruitActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Erreur recuperation des données", Toast.LENGTH_LONG).show()
             }
-
         }
 
         nokButton.setOnClickListener{
@@ -65,12 +64,6 @@ class JusFruitActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         }
-
-
-
-
-
-
     }
 
     private fun displayRandomQuestion() {
@@ -92,7 +85,7 @@ class JusFruitActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 //TODO afficher les boutons OK/NOK et afficher une autre question
-
+                okButton.isVisible = true
                 nokButton.isVisible = true
                 timerView.isVisible = false
                 questionTextView.isVisible = false
@@ -102,9 +95,4 @@ class JusFruitActivity : AppCompatActivity() {
         }
         timer?.start()
     }
-
-
-
-
-
 }

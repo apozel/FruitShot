@@ -16,7 +16,7 @@
         app:layout_constraintStart_toEndOf="@+id/bananaImage"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/realLemon" />
+        app:srcCompat="@drawable/reallemon" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardLayout"
@@ -76,7 +76,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/realStrawberry" />
+        app:srcCompat="@drawable/realstrawberry" />
 
     <ImageView
         android:id="@+id/bananaImage"
@@ -87,7 +87,7 @@
         app:layout_constraintStart_toEndOf="@+id/strawberryImage"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/realBanana" />
+        app:srcCompat="@drawable/realbanana" />
 
     <ImageView
         android:id="@+id/watermelonImage"
@@ -98,6 +98,6 @@
         app:layout_constraintStart_toEndOf="@+id/lemonImage"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/realWaterMelon" />
+        app:srcCompat="@drawable/realwatermelon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

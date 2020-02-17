@@ -7,8 +7,8 @@ class Card(var color: CardColor, var value: String){
 
 }
 enum class CardColor(@DrawableRes val value: Int ) {
-    BANANA(R.drawable.realBanana),
-    STRAWBERRY(R.drawable.realStrawberry),
-    LEMON(R.drawable.realLemon),
-    WATERMELON(R.drawable.realWaterMelon)
+    BANANA(R.drawable.realbanana),
+    STRAWBERRY(R.drawable.realstrawberry),
+    LEMON(R.drawable.reallemon),
+    WATERMELON(R.drawable.realwatermelon)
 }
