@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseError
 import kotlin.random.Random
 
 
+
 class ActionVerite : AppCompatActivity() {
 
 
@@ -25,6 +26,8 @@ class ActionVerite : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("Action")
         val actionList = arrayListOf<String>()
+        val myRef2 = database.getReference("Verite")
+        val veriteList = arrayListOf<String>()
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -32,6 +35,21 @@ class ActionVerite : AppCompatActivity() {
                     val value = it.getValue(String::class.java)
                     Log.d(TAG, "Value is: $value")
                     actionList.add(value ?: "")
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.w(TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+
+        myRef2.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                dataSnapshot.children.forEach {
+                    val value2 = it.getValue(String::class.java)
+                    Log.d(TAG, "Value is: $value2")
+                    veriteList.add(value2 ?: "")
                 }
             }
 
@@ -50,13 +68,16 @@ class ActionVerite : AppCompatActivity() {
             else {
                 Toast.makeText(this, "Erreur recuperation des données", Toast.LENGTH_LONG).show()
             }
-
         }
+
 
         VeriteButton.setOnClickListener {
-            Toast.makeText(this , "Vous avez choisi verite", Toast.LENGTH_LONG).show();
-
+            val randomIndexList2 = Random.nextInt(veriteList.size)
+            val element2 = veriteList[randomIndexList2]
+            questionDisplay.text = element2
         }
+
+
 
     }
 }
