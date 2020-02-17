@@ -5,7 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Purple">
+    tools:context=".PurpleActivity">
 
     <Button
         android:id="@+id/purpleAccess"
@@ -99,28 +99,6 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Constraintcard"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConstraintPassCard3"
-            android:layout_width="133dp"
-            android:layout_height="158dp">
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConstraintPassCard1"
-            android:layout_width="133dp"
-            android:layout_height="158dp">
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConstraintPassCard2"
-            android:layout_width="133dp"
-            android:layout_height="158dp">
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
