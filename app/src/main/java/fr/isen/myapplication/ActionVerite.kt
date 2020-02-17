@@ -11,7 +11,6 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_action_verite.*
 import com.google.firebase.database.DatabaseError
 import kotlin.random.Random
-import android.os.Vibrator;
 
 
 
@@ -60,9 +59,15 @@ class ActionVerite : AppCompatActivity() {
         })
 
         ActionButton.setOnClickListener {
-            val randomIndexList = Random.nextInt(actionList.size)
-            val element = actionList[randomIndexList]
-            questionDisplay.text = element
+            Toast.makeText(this , "Vous avez choisi action", Toast.LENGTH_LONG).show()
+            if (actionList.isNotEmpty()) {
+                val randomIndexList = Random.nextInt(actionList.size)
+                val element = actionList[randomIndexList]
+                questionDisplay.text = element
+            }
+            else {
+                Toast.makeText(this, "Erreur recuperation des données", Toast.LENGTH_LONG).show()
+            }
         }
 
 
