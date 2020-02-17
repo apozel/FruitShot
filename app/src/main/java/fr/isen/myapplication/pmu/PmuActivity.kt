@@ -1,12 +1,8 @@
 package fr.isen.myapplication.pmu
 
-import android.animation.Animator
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
 import android.transition.TransitionManager
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintSet
@@ -32,12 +28,19 @@ class PmuActivity : AppCompatActivity() {
             changeCardValue(takeRandomCard())
 
         }
-        card2view.setOnClickListener{
+        strawberryImage.setOnClickListener{
             moveLayout(it)
         }
-        imageView7.setOnClickListener{
+        bananaImage.setOnClickListener{
             moveLayout(it)
         }
+        lemonImage.setOnClickListener {
+            moveLayout(it)
+        }
+        watermelonImage.setOnClickListener {
+            moveLayout(it)
+        }
+
 
     }
 
