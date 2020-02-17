@@ -7,14 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".pmu.PmuActivity" >
 
+    <ImageView
+        android:id="@+id/lemonImage"
+        android:layout_width="95dp"
+        android:layout_height="99dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/watermelonImage"
+        app:layout_constraintStart_toEndOf="@+id/bananaImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/realLemon" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardLayout"
-        android:layout_width="327dp"
-        android:layout_height="405dp"
+        android:layout_width="215dp"
+        android:layout_height="177dp"
+
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028"
+        tools:showPaths="true">
 
         <TextView
             android:id="@+id/valueCardView1"
@@ -50,4 +66,38 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.9" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/strawberryImage"
+        android:layout_width="121dp"
+        android:layout_height="102dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bananaImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/realStrawberry" />
+
+    <ImageView
+        android:id="@+id/bananaImage"
+        android:layout_width="107dp"
+        android:layout_height="99dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lemonImage"
+        app:layout_constraintStart_toEndOf="@+id/strawberryImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/realBanana" />
+
+    <ImageView
+        android:id="@+id/watermelonImage"
+        android:layout_width="103dp"
+        android:layout_height="99dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lemonImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/realWaterMelon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

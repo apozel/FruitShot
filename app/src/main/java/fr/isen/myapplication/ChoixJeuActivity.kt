@@ -19,12 +19,11 @@ class ChoixJeuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-       /* buttonGame2.setOnClickListener {
-            val intent = Intent(this, ::class.java)
+        buttonGame2.setOnClickListener {
+            val intent = Intent(this, PurpleActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
-
-        }*/
+        }
 
         buttonGame3.setOnClickListener {
             val intent = Intent(this, ActionVerite::class.java)

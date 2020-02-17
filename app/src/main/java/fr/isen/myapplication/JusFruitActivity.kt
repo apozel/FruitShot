@@ -11,7 +11,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_action_verite.*
 import kotlinx.android.synthetic.main.activity_jus_fruit.*
 import kotlin.math.roundToInt
 import kotlin.random.Random
@@ -87,7 +86,7 @@ class JusFruitActivity : AppCompatActivity() {
         timerView.isVisible = true
         timer = object : CountDownTimer(8500, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                val secondLeft = (millisUntilFinished.toFloat() / 1000).roundToInt()
+                val secondLeft  = (millisUntilFinished.toFloat()/1000).roundToInt()
                 timerView.text = secondLeft.toString()
             }
 
@@ -103,6 +102,9 @@ class JusFruitActivity : AppCompatActivity() {
         }
         timer?.start()
     }
+
+
+
 
 
 }
