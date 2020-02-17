@@ -12,15 +12,17 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_jus_fruit.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.roundToInt
 import kotlin.random.Random
-
 
 class JusFruitActivity : AppCompatActivity() {
 
     private val TAG = "ActionVeriteActivity"
     private var timer: CountDownTimer? = null
     private val questionList = arrayListOf<String>()
+
+    private var userList = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,8 @@ class JusFruitActivity : AppCompatActivity() {
         timerView.isVisible = false
 
 
+        userList = intent.getSerializableExtra("user_list") as ArrayList<String>
+        //Log.d("coucou", userList[0])
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("questions")
 
@@ -49,7 +53,6 @@ class JusFruitActivity : AppCompatActivity() {
         })
 
         okButton.setOnClickListener {
-            //Toast.makeText(this, "Nouvelle question", Toast.LENGTH_LONG).show()
             if (questionList.isNotEmpty()) {
                 displayRandomQuestion()
                 okButton.isVisible = false
@@ -64,20 +67,31 @@ class JusFruitActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         }
+
+
     }
+
 
     private fun displayRandomQuestion() {
         questionTextView.isVisible = true
         val randomIndexList = Random.nextInt(questionList.size)
         val element = questionList[randomIndexList]
         questionTextView.text = element
+        displayUser()
         progressBar.isVisible = false
         startTimer()
     }
 
+    private fun displayUser(){
+        val randomIndexList = Random.nextInt(userList.size)
+        val element = userList[randomIndexList]
+        userName.text = "${element}" + ", à ton tour!"
+    }
+
+
     private fun startTimer() {
         timerView.isVisible = true
-        timer = object : CountDownTimer(8500, 1000) {
+        timer = object : CountDownTimer(2500, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 val secondLeft  = (millisUntilFinished.toFloat()/1000).roundToInt()
                 timerView.text = secondLeft.toString()
