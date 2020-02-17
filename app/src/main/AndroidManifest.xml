@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ChoixJeuActivity"></activity>
+        <activity android:name=".JusFruitActivity"></activity>
         <activity android:name=".pmu.PmuActivity"></activity>
+        <activity android:name=".ActionVerite"/>
         <activity android:name=".PurpleActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -18,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

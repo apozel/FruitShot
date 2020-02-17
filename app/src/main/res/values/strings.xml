@@ -1,12 +1,19 @@
 <resources>
     <string name="app_name">FruitShot</string>
-    <string name="userName"> Joueur 1, à ton tour</string>
+    <string name="userName"> Joueur 1, à ton tour!</string>
     <string name="question1">Cites 3 moments où c est bon d avoir mal</string>
     <string name="question2">Cites 3 choses a oublier sur une aire d autoroute</string>
     <string name="appliTitle">Fruit sh..ts</string>
     <string name="titleUsers">Ramène ta fraise</string>
     <string name="timer">8</string>
+    <string name="ActionButton">ACTION</string>
+    <string name="VeriteButton">VÉRITÉ</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="AVuserName">  </string>
+    <string name="buttonGame1">Le jus de fruit</string>
+    <string name="pmu">Le PMU</string>
+    <string name="pmubutton">Le PMU</string>
+    <string name="purplebutton">Le purple</string>
+    <string name="actionbutton">Action ou Vérité</string>
+    <string name="jusfruitbutton">Le jus du fruit</string>
 </resources>
