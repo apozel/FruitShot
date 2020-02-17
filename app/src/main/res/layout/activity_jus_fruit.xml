@@ -12,10 +12,9 @@
         android:layout_width="294dp"
         android:layout_height="125dp"
         android:fontFamily="@font/poiret_one"
-        android:text="@string/question1"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,5 +77,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nokbutton" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/questionTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

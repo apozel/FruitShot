@@ -15,8 +15,7 @@
         <activity android:name=".JusFruitActivity"></activity>
 
         <activity android:name=".pmu.PmuActivity"></activity>
-        <activity android:name=".ActionVerite"/>
-
+        <activity android:name=".ActionVerite"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

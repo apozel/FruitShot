@@ -42,9 +42,15 @@ class ActionVerite : AppCompatActivity() {
 
         ActionButton.setOnClickListener {
             Toast.makeText(this , "Vous avez choisi action", Toast.LENGTH_LONG).show()
-            val randomIndexList = Random.nextInt(actionList.size)
-            val element = actionList[randomIndexList]
-            questionDisplay.text = element
+            if (actionList.isNotEmpty()) {
+                val randomIndexList = Random.nextInt(actionList.size)
+                val element = actionList[randomIndexList]
+                questionDisplay.text = element
+            }
+            else {
+                Toast.makeText(this, "Erreur recuperation des données", Toast.LENGTH_LONG).show()
+            }
+
         }
 
         VeriteButton.setOnClickListener {
