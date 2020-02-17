@@ -10,10 +10,12 @@
     <string name="VeriteButton">VÉRITÉ</string>
 
     <string name="AVuserName">  </string>
+    <string name="questionDisplay" />
     <string name="buttonGame1">Le jus de fruit</string>
     <string name="pmu">Le PMU</string>
     <string name="pmubutton">Le PMU</string>
     <string name="purplebutton">Le purple</string>
     <string name="actionbutton">Action ou Vérité</string>
     <string name="jusfruitbutton">Le jus du fruit</string>
+
 </resources>
