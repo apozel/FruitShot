@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B4FFFFFF"
+    android:background="#C8F7E7E3"
     android:visibility="visible"
     tools:context=".MainActivity"
     tools:visibility="visible">
@@ -63,11 +63,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="32dp"
         android:fontFamily="@font/actor"
         android:text="@string/titleUsers"
         android:textColor="#FA7470"
-        android:textSize="18sp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 

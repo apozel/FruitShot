@@ -18,5 +18,7 @@
     <string name="purplebutton">Le purple</string>
     <string name="actionbutton">Action ou Vérité</string>
     <string name="jusfruitbutton">Le jus du fruit</string>
+    <string name="endText">Shake pour continuer...</string>
+    />
 
 </resources>

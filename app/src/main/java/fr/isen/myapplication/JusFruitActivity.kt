@@ -1,5 +1,6 @@
 package fr.isen.myapplication
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -15,13 +16,20 @@ import kotlinx.android.synthetic.main.activity_jus_fruit.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.roundToInt
 import kotlin.random.Random
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 
-class JusFruitActivity : AppCompatActivity() {
+class JusFruitActivity : AppCompatActivity(), SensorEventListener {
 
     private val TAG = "ActionVeriteActivity"
     private var timer: CountDownTimer? = null
     private val questionList = arrayListOf<String>()
+    private lateinit var sensorManager: SensorManager
+    private var accelerometer: Sensor? = null
 
+    private var allowChange = false
     private var userList = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +38,11 @@ class JusFruitActivity : AppCompatActivity() {
         questionTextView.isVisible = true
         progressBar.isVisible = true
         timerView.isVisible = false
+        endText.isVisible= false
+        // Sensor
+        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        // focus in accelerometer
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
 
         userList = intent.getSerializableExtra("user_list") as ArrayList<String>
@@ -52,19 +65,11 @@ class JusFruitActivity : AppCompatActivity() {
             }
         })
 
-        okButton.setOnClickListener {
-            if (questionList.isNotEmpty()) {
-                displayRandomQuestion()
-                okButton.isVisible = false
-                nokButton.isVisible = false
-            } else {
-                Toast.makeText(this, "Erreur recuperation des données", Toast.LENGTH_LONG).show()
-            }
-        }
 
-        nokButton.setOnClickListener{
+        nokButton.setOnClickListener {
             val intent = Intent(this, ChoixJeuActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.putExtra("user_list", userList)
             startActivity(intent)
         }
 
@@ -82,7 +87,7 @@ class JusFruitActivity : AppCompatActivity() {
         startTimer()
     }
 
-    private fun displayUser(){
+    private fun displayUser() {
         val randomIndexList = Random.nextInt(userList.size)
         val element = userList[randomIndexList]
         userName.text = "${element}" + ", à ton tour!"
@@ -91,22 +96,58 @@ class JusFruitActivity : AppCompatActivity() {
 
     private fun startTimer() {
         timerView.isVisible = true
-        timer = object : CountDownTimer(2500, 1000) {
+        timer = object : CountDownTimer(8500, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                val secondLeft  = (millisUntilFinished.toFloat()/1000).roundToInt()
+                val secondLeft = (millisUntilFinished.toFloat() / 1000).roundToInt()
                 timerView.text = secondLeft.toString()
             }
 
             override fun onFinish() {
-                //TODO afficher les boutons OK/NOK et afficher une autre question
-                okButton.isVisible = true
                 nokButton.isVisible = true
                 timerView.isVisible = false
                 questionTextView.isVisible = false
-                okButton.isVisible = true
+                endText.isVisible = true
+                allowChange=true
 
             }
         }
         timer?.start()
     }
+
+
+    //quatre fonctions du sensor
+
+    override fun onResume() {
+        super.onResume()
+        accelerometer?.also { it ->
+            sensorManager.registerListener(this, it, SensorManager.SENSOR_DELAY_NORMAL)
+        }
+
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sensorManager.unregisterListener(this)
+    }
+
+
+
+    override fun onSensorChanged(event: SensorEvent?) {
+
+        if (event!!.values[0] + event.values[1] + event.values[2] >= 20 && allowChange) {
+
+            if (questionList.isNotEmpty()) {
+                displayRandomQuestion()
+                nokButton.isVisible = false
+                endText.isVisible= false
+            } else {
+                Toast.makeText(this, "Erreur recuperation des données", Toast.LENGTH_LONG).show()
+            }
+            allowChange = false
+        }
+    }
+
 }
