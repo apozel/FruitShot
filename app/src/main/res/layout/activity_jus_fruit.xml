@@ -4,18 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/realbanana"
+    android:background="@drawable/banana"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/questionTextView"
-        android:layout_width="294dp"
-        android:layout_height="125dp"
+        android:layout_width="343dp"
+        android:layout_height="131dp"
         android:fontFamily="@font/poiret_one"
-        android:text="@string/question1"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,9 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/actor"
-        android:text="@string/userName"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,27 +54,42 @@
         app:layout_constraintVertical_bias="0.13" />
 
     <ImageView
-        android:id="@+id/okButton"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="248dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/okbutton" />
-
-    <ImageView
         android:id="@+id/nokButton"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="248dp"
+        android:layout_width="66dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="66dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nokbutton" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/questionTextView" />
+
+    <TextView
+        android:id="@+id/endText"
+        android:layout_width="259dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="192dp"
+        android:fontFamily="@font/abel"
+        android:text="@string/endText"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/nokButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

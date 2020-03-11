@@ -13,6 +13,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    //private val userList = arrayListOf<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,8 +26,10 @@ class MainActivity : AppCompatActivity() {
                 val editText = it as EditText
                 userList.add(editText.text.toString())
             }
+
             val intent = Intent(this, ChoixJeuActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.putExtra("user_list", userList)
             startActivity(intent)
 
         }
@@ -39,5 +43,10 @@ class MainActivity : AppCompatActivity() {
                 userLayout.addView(newUser)
             }
         }
+
+        /*supprButton.setOnClickListener{
+            userList.remove("")
+            userLayout.removeView()
+        }*/
     }
 }

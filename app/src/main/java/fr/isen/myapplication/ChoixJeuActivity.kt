@@ -26,15 +26,20 @@ class ChoixJeuActivity : AppCompatActivity() {
         }
 
         buttonGame3.setOnClickListener {
-            val intent = Intent(this, ActionVerite::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(intent)
+            val userList = intent.getSerializableExtra("user_list")
+            val intentD = Intent(this, ActionVerite::class.java)
+            intentD.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            intentD.putExtra("user_list",  userList)
+            startActivity(intentD)
+
         }
 
         buttonGame4.setOnClickListener {
-            val intent = Intent(this, JusFruitActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(intent)
+            val userList = intent.getSerializableExtra("user_list")
+            val intentD = Intent(this, JusFruitActivity::class.java)
+            intentD.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            intentD.putExtra("user_list",  userList)
+            startActivity(intentD)
 
         }
 

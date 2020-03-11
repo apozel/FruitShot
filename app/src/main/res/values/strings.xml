@@ -21,5 +21,7 @@
     <string name="secondPlace">2</string>
     <string name="thirdPlace">3</string>
     <string name="fourthPlace">4</string>
+    <string name="endText">Shake pour continuer...</string>
+    />
 
 </resources>
