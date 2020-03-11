@@ -256,6 +256,7 @@ class PmuActivity : AppCompatActivity() {
         val intent = Intent(this,PmuActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         startActivity(intent)
+        finish()
     }
 
 
