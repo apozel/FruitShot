@@ -1,17 +1,20 @@
 package fr.isen.myapplication.pmu
 
 import android.animation.ValueAnimator
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.transition.TransitionManager
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
 import fr.isen.myapplication.R
 import kotlinx.android.synthetic.main.activity_pmu.*
+import java.security.AccessController.getContext
+
 
 class PmuActivity : AppCompatActivity() {
 
@@ -250,26 +253,12 @@ class PmuActivity : AppCompatActivity() {
     }
 
     fun resetGame() {
-        resetRiderCardToStart()
-        resetLayoutToStart()
+        val intent = Intent(this,PmuActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(intent)
     }
 
-    private fun resetRiderCardToStart() {
-        for (horse in horses) {
-            horse.reset()
-            chooseLineChangeColor(horse)
-        }
-        nbWinCard = 0
-        cardPackage.mixPackage()
-    }
 
-    private fun resetLayoutToStart() {
-        //TODO: changer la position des cavalier
-        moveResetCard()
-        TransitionManager.beginDelayedTransition(parentView)
-        startView.applyTo(parentView)
-
-    }
 
 
 }
